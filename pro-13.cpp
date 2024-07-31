@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int number;
+    cout << "Enter an integer: ";
+    cin >> number;
+
+    // Check divisibility by 3 using the ternary conditional operator
+    string result = (number % 3 == 0) ? "The number is divisible by 3." : "The number is not divisible by 3.";
+
+    cout << result << endl;
+
+    return 0;
+}
