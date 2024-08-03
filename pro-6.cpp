@@ -1,21 +1,13 @@
 #include <iostream>
-
 using namespace std;
 
+// Function to count characters in a string
+int countChars(const string& str) {
+    return str.length();
+}
+
 int main() {
-    char c;
-    cout << "Enter a character: ";
-    cin >> c;
-
-    // Convert to lowercase to simplify checks
-    c = tolower(c);
-
-    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
-        cout << c << " is a vowel." << endl;
-    else if ((c >= 'a' && c <= 'z'))
-        cout << c << " is a consonant." << endl;
-    else
-        cout << c << " is not a letter." << endl;
-
+    string str = "hello";
+    cout << "Number of characters: " << countChars(str) << endl;
     return 0;
 }

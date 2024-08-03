@@ -1,16 +1,11 @@
 #include <iostream>
-
 using namespace std;
 
+string reverseString(const string& str) {
+    return string(str.rbegin(), str.rend());
+}
+
 int main() {
-    int num1, num2, num3;
-
-    cout << "Enter three integers: ";
-    cin >> num1 >> num2 >> num3;
-
-    double average = (num1 + num2 + num3) / 3.0;
-
-    cout << "The average is: " << average << endl;
-
+    cout << "Reversed: " << reverseString("hello") << endl;
     return 0;
 }

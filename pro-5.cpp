@@ -1,17 +1,11 @@
 #include <iostream>
-
 using namespace std;
 
+int gcd(int a, int b) {
+    return b ? gcd(b, a % b) : a;
+}
+
 int main() {
-    float num1, num2;
-
-    cout << "Enter two floating-point numbers: ";
-    cin >> num1 >> num2;
-
-    cout << "Addition: " << num1 + num2;
-    cout << "Subtraction: " << num1 - num2;
-    cout << "Multiplication: " << num1 * num2;
-    cout << "Division: " << num1 / num2;
-
+    cout << "GCD: " << gcd(48, 18) << endl;
     return 0;
 }

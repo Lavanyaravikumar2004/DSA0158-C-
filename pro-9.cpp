@@ -1,25 +1,27 @@
 #include <iostream>
-#include <cmath>
-
 using namespace std;
 
+// Function to check if a string is a palindrome
+bool isPalindrome(const string& str) {
+    int left = 0;
+    int right = str.size() - 1;
+
+    while (left < right) {
+        if (str[left] != str[right]) {
+            return false;
+        }
+        ++left;
+        --right;
+    }
+    return true;
+}
+
 int main() {
-    float number;
-    cout << "Enter a floating-point number: ";
-    cin >> number;
-
-    // Round down to the nearest integer
-    int roundedDown = floor(number);
-
-    // Round up to the nearest integer
-    int roundedUp = ceil(number);
-
-    // Determine the nearest integer
-    int nearestInteger = (number - roundedDown < roundedUp - number) ? roundedDown : roundedUp;
-
-    cout << "Rounded down: " << roundedDown << endl;
-    cout << "Rounded up: " << roundedUp << endl;
-    cout << "Nearest integer: " << nearestInteger << endl;
-
+    string str = "radar";
+    if (isPalindrome(str)) {
+        cout << str << " is a palindrome" << endl;
+    } else {
+        cout << str << " is not a palindrome" << endl;
+    }
     return 0;
 }
