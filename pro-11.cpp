@@ -1,16 +1,15 @@
 #include <iostream>
-
 using namespace std;
 
 int main() {
-    int a, b, c;
-    cout << "Enter three integers: ";
-    cin >> a >> b >> c;
+    int arr[] = {1, 2, 3, 4, 5};
+    int* ptr = arr;  // Pointer to the first element of the array
 
-    // Find the largest using the ternary conditional operator
-    int largest = (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
-
-    cout << "The largest number is: " << largest << endl;
+    cout << "Array elements: ";
+    for (int i = 0; i < 5; ++i) {
+        cout << *(ptr + i) << " ";
+    }
+    cout << endl;
 
     return 0;
 }

@@ -1,14 +1,42 @@
 #include <iostream>
 using namespace std;
 
-bool isPrime(int n) {
-    if (n <= 1) return false;
-    for (int i = 2; i * i <= n; ++i)
-        if (n % i == 0) return false;
-    return true;
-}
+class Vehicle {
+protected:
+    string make, model;
+    int year;
+public:
+    Vehicle(string mk, string mdl, int yr) : make(mk), model(mdl), year(yr) {}
+    void show() { cout << "Make: " << make << ", Model: " << model << ", Year: " << year << endl; }
+};
+
+class Car : public Vehicle {
+    int seatingCapacity;
+    string fuelType;
+public:
+    Car(string mk, string mdl, int yr, int sc, string ft) : Vehicle(mk, mdl, yr), seatingCapacity(sc), fuelType(ft) {}
+    void show() {
+        Vehicle::show();
+        cout << "Seating Capacity: " << seatingCapacity << ", Fuel Type: " << fuelType << endl;
+    }
+};
+
+class Truck : public Vehicle {
+    double payloadCapacity, towingCapacity;
+public:
+    Truck(string mk, string mdl, int yr, double pc, double tc) : Vehicle(mk, mdl, yr), payloadCapacity(pc), towingCapacity(tc) {}
+    void show() {
+        Vehicle::show();
+        cout << "Payload Capacity: " << payloadCapacity << " tons, Towing Capacity: " << towingCapacity << " tons" << endl;
+    }
+};
 
 int main() {
-    cout << (isPrime(7) ? "Prime" : "Not Prime") << endl;
+    Car car("Toyota", "Camry", 2020, 5, "Gasoline");
+    Truck truck("Ford", "F-150", 2021, 3.5, 5.0);
+
+    car.show();
+    truck.show();
+
     return 0;
 }

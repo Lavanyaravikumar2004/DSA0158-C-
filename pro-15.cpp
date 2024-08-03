@@ -1,19 +1,17 @@
 #include <iostream>
-
 using namespace std;
 
+// Function to be called
+void greet() {
+    cout << "Hello, World!" << endl;
+}
+
 int main() {
-    int number;
-    unsigned long long factorial = 1;
+    // Pointer to the function
+    void (*funcPtr)() = greet;
 
-    cout << "Enter a positive integer: ";
-    cin >> number;
-
-    for (int i = 1; i <= number; ++i) {
-        factorial *= i;
-    }
-
-    cout << "Factorial of " << number << " = " << factorial << endl;
+    // Call the function using the pointer
+    funcPtr();
 
     return 0;
 }
